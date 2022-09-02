@@ -29,16 +29,12 @@ function postTweet(text) {
         status: text,
     }, tweeted)
 }
-
+app.set('port', process.env.PORT || 5000)
 app.get('/', (req, res) => {
-    response.send(randomGenerator.combo())
-}).listen(5000, () => {
-    console.log('App is running, server is listening')
+    res.send(randomGenerator.combo())
+}).listen(app.get('port'), () => {
+    console.log('App is running, server is listening on port', app.get('port'))
 })
-
-// app.get("/", (req, res) => {
-//     res.send(randomGenerator.combo())
-// })
 
 postTweet(randomGenerator.combo())
 setInterval(() => http.get("http://cardsagainsthumanity-bot.herokuapp.com"), 18000)
