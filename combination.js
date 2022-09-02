@@ -10,16 +10,12 @@ exports.combo = () => {
     let text = randomBlackCard.text
     let textR = ""
 
+    if (text.endsWith("?")) text += " _"
+
     for (let i = 0; i < randomBlackCard.pick; i++) {
         randomWhiteCards.push(cards.white[pickRandomNumber(cards.white.length)])
-
-        if (randomBlackCard.text.endsWith("?")) {
-            randomBlackCard.text = randomBlackCard.text + " _"
-        }
-
         textR = `${randomWhiteCards[i]}`
         text = text.replace("_", textR)
-        
     }
     console.log(text)
     return text
