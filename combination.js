@@ -21,6 +21,10 @@ exports.combo = () => {
         textR = `${randomWhiteCards[i]}`
         text = text.replace("_", textR)
     }
+
+    if (text.endsWith(".") && text.charAt(text.length - 1) == ".") 
+        text = text.substring(0, text.length - 1)
+        
     console.log(text)
     return text
 }
