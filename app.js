@@ -1,4 +1,6 @@
 require('dotenv').config()
+const express = require('express')
+const app = express()
 const Twit = require('twit')
 const http = require('http')
 const client = new Twit({
@@ -27,6 +29,12 @@ function postTweet(text) {
         status: text,
     }, tweeted)
 }
+
+app.get('/', (req, res) => {
+    response.send(randomGenerator.combo())
+}).listen(5000, () => {
+    console.log('App is running, server is listening')
+})
 
 // app.get("/", (req, res) => {
 //     res.send(randomGenerator.combo())
