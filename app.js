@@ -1,5 +1,6 @@
 require('dotenv').config()
 const Twit = require('twit')
+const http = require('http')
 const client = new Twit({
     access_token: process.env.ACCESS_TOKEN,
     access_token_secret: process.env.ACCESS_TOKEN_SECRET,
@@ -27,9 +28,9 @@ function postTweet(text) {
     }, tweeted)
 }
 
-app.get("/", (req, res) => {
-    res.send(randomGenerator.combo())
-})
+// app.get("/", (req, res) => {
+//     res.send(randomGenerator.combo())
+// })
 
 postTweet(randomGenerator.combo())
 setInterval(() => http.get("http://cardsagainsthumanity-bot.herokuapp.com"))
