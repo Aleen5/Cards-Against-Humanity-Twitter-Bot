@@ -13,8 +13,13 @@ exports.combo = () => {
     for (let i = 0; i < randomBlackCard.pick; i++) {
         randomWhiteCards.push(cards.white[pickRandomNumber(cards.white.length)])
 
+        if (randomBlackCard.text.endsWith("?")) {
+            randomBlack.text = randomBlackCard.text + " _"
+        }
+
         textR = `${randomWhiteCards[i]}`
         text = text.replace("_", textR)
+        
     }
     console.log(text)
     return text
