@@ -13,6 +13,9 @@ exports.combo = () => {
     if (!text.includes("_"))
         if (text.endsWith("?")) text += " _"
 
+    if (text.includes("Insert Name" || text.includes("Insert Name's")))
+        text.replace("Insert Name" || "Insert Name's", "[tag a friend]")
+
     for (let i = 0; i < randomBlackCard.pick; i++) {
         randomWhiteCards.push(cards.white[pickRandomNumber(cards.white.length)])
         textR = `${randomWhiteCards[i]}`
