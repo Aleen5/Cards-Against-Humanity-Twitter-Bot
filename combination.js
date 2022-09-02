@@ -14,7 +14,7 @@ exports.combo = () => {
         randomWhiteCards.push(cards.white[pickRandomNumber(cards.white.length)])
 
         if (randomBlackCard.text.endsWith("?")) {
-            randomBlack.text = randomBlackCard.text + " _"
+            randomBlackCard.text = randomBlackCard.text + " _"
         }
 
         textR = `${randomWhiteCards[i]}`
