@@ -33,5 +33,5 @@ function postTweet(text) {
 // })
 
 postTweet(randomGenerator.combo())
-setInterval(() => http.get("http://cardsagainsthumanity-bot.herokuapp.com"))
+setInterval(() => http.get("http://cardsagainsthumanity-bot.herokuapp.com"), 18000)
 setInterval(() => postTweet(randomGenerator.combo()), hoursToMilliseconds(3))
