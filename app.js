@@ -27,6 +27,10 @@ function postTweet(text) {
     }, tweeted)
 }
 
+app.get("/", (req, res) => {
+    res.send(randomGenerator.combo())
+})
+
 postTweet(randomGenerator.combo())
-//setInterval(() => http.get("http://<your app name>.herokuapp.com"))
+setInterval(() => http.get("http://cardsagainsthumanity-bot.herokuapp.com"))
 setInterval(() => postTweet(randomGenerator.combo()), hoursToMilliseconds(3))
