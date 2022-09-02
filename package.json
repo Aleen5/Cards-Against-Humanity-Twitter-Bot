@@ -1,0 +1,16 @@
+{
+  "name": "cards_against_humanity_bot",
+  "version": "1.0.0",
+  "description": "Cards Against Humanity Bot",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Alejandro Rodriguez Espinosa",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "twit": "^2.2.11"
+  }
+}

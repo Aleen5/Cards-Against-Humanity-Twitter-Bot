@@ -1,0 +1,32 @@
+require('dotenv').config()
+const Twit = require('twit')
+const client = new Twit({
+    access_token: process.env.ACCESS_TOKEN,
+    access_token_secret: process.env.ACCESS_TOKEN_SECRET,
+    consumer_key: process.env.CONSUMER_KEY,
+    consumer_secret: process.env.CONSUMER_KEY_SECRET,
+})
+const randomGenerator = require('./combination')
+
+function hoursToMilliseconds(hours, minutes = 0) {
+    return (hours * 60 * 60 * 1000) + (minutes * 60 * 1000)
+}
+
+function tweeted(err, data, response) {
+    if (err) {
+      console.log("Something Went wrong", err)
+    } else {
+       //console.log(data)
+       console.log("Tweeted")
+    }
+}
+
+function postTweet(text) {
+    client.post('statuses/update', {
+        status: text,
+    }, tweeted)
+}
+
+postTweet(randomGenerator.combo())
+//setInterval(() => http.get("http://<your app name>.herokuapp.com"))
+setInterval(() => postTweet(randomGenerator.combo()), hoursToMilliseconds(3))
