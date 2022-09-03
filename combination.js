@@ -24,7 +24,8 @@ exports.combo = () => {
 
         // Capitaliza la carta blanca si la carta negra comienza con un espacio en blanco
         if (text.startsWith("_")) {
-            textR.charAt(0) = textR.charAt(0).toUpperCase
+            let oldCard = textR
+            textR = textR.charAt(0).toUpperCase() + oldCard.slice(1)
         }
 
         text = text.replace("_", textR)
