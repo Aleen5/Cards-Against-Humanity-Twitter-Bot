@@ -23,10 +23,7 @@ exports.combo = () => {
         textR = `${randomWhiteCards[i]}`
 
         // Capitaliza la carta blanca si la carta negra comienza con un espacio en blanco
-        if (text.startsWith("_")) {
-            let oldCard = textR
-            textR = textR.charAt(0).toUpperCase() + oldCard.slice(1)
-        }
+        textR = text.startsWith("_") ? textR.charAt(0).toUpperCase() + textR.slice(1) : textR
 
         text = text.replace("_", textR)
     }
