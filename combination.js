@@ -16,7 +16,7 @@ exports.combo = () => {
 
     // Cambia los Insert Name por tags en twitter
     if (text.includes("Insert Name" || text.includes("Insert Name's")))
-        text.replace("Insert Name" || "Insert Name's", "[tag a friend]")
+        text.replace("Insert Name", "[tag a friend]")
 
     for (let i = 0; i < randomBlackCard.pick; i++) {
         randomWhiteCards.push(cards.white[pickRandomNumber(cards.white.length)])
