@@ -36,6 +36,9 @@ app.get('/', (req, res) => {
     console.log('App is running, server is listening on port', app.get('port'))
 })
 
+// Test
+//setInterval(() => console.log(randomGenerator.combo()), 5000)
+
 postTweet(randomGenerator.combo())
 setInterval(() => http.get("http://cardsagainsthumanity-bot.herokuapp.com"), 18000)
 setInterval(() => postTweet(randomGenerator.combo()), hoursToMilliseconds(3))
